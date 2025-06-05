@@ -1,8 +1,9 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const { PrismaClient } = require('@prisma/client');
+
 const app = express();
 const prisma = new PrismaClient();
-const port = 3000;
 
 app.use(express.json());
 
@@ -115,7 +116,4 @@ app.delete('/habilidades/:id', async (req, res) => {
     res.json({ message: 'Habilidade deletada com sucesso' });
 });
 
-// === INICIAR SERVIDOR ===
-app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
-});
+module.exports.handler = serverless(app);
