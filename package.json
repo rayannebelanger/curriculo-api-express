@@ -6,6 +6,12 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "scripts": {
+    "start": "node api/index.js",
+    "dev": "nodemon api/index.js",
+    "postinstall": "prisma generate",
+    "vercel-build": "prisma generate"
+  },
   "dependencies": {
     "@prisma/client": "^6.9.0",
     "cors": "^2.8.5",
@@ -13,9 +19,7 @@
     "express": "^5.1.0",
     "serverless-http": "^3.2.0"
   },
-  "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js",
-    "postinstall": "prisma generate"
+  "devDependencies": {
+    "prisma": "^6.9.0"
   }
 }
