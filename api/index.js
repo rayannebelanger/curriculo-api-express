@@ -110,7 +110,7 @@ app.put('/habilidades/:id', async (req, res) => {
     res.json(habilidadeAtualizada);
 });
 
-app.delete('/habilidades/:id', async (req, res) => {
+app.delete('/habilidades/:id', async (start, res) => {
     const { id } = req.params;
     await prisma.habilidade.delete({ where: { id: Number(id) } });
     res.json({ message: 'Habilidade deletada com sucesso' });
