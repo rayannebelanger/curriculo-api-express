@@ -2,10 +2,10 @@
   "name": "curriculo-api",
   "version": "1.0.0",
   "main": "api/index.js",
-  "keywords": [],
+  "description": "",
   "author": "",
   "license": "ISC",
-  "description": "",
+  "keywords": [],
   "scripts": {
     "start": "node api/index.js",
     "dev": "nodemon api/index.js",
@@ -20,10 +20,5 @@
   },
   "devDependencies": {
     "prisma": "^6.9.0"
-  },
-  "scripts": {
-    "start": "node api/index.js",
-    "dev": "nodemon api/index.js",
-    "postinstall": "prisma generate"
   }
 }
