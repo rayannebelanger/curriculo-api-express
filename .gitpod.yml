@@ -1,0 +1,15 @@
+image: gitpod/workspace-postgres
+
+tasks:
+  - name: Setup
+    command: |
+      npm install
+      npx prisma generate
+      npx prisma migrate dev --name init
+      npm run dev
+
+ports:
+  - port: 3000
+    onOpen: open-preview
+  - port: 5432
+    onOpen: ignore

@@ -1,5 +1,7 @@
-const serverless = require('serverless-http');
 const app = require('../src/app');
 
-module.exports = app; // para rodar local
-module.exports.handler = serverless(app); // para rodar no Vercel
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}`);
+});
